@@ -23,7 +23,10 @@ EXTRA_OUTPUT_FILES :=
 LIBRARY_DIRS :=
 LIBRARIES :=
 
-BUILD_FLAGS := -Wno-unused-function -municode
+BUILD_FLAGS := -Wno-unused-function
+ifeq ($(OS),Windows_NT)
+  BUILD_FLAGS += -municode
+endif
 BUILD_FLAGS_CC :=
 BUILD_FLAGS_CXX :=
 RUN_FLAGS :=
